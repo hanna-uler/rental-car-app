@@ -1,0 +1,26 @@
+.container {
+  padding: 0 120px;
+  border-bottom: 1px solid var(--badges);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--badges);
+}
+.logo {
+  color: black;
+  font-weight: 600;
+}
+.logoSpan {
+  color: blue;
+  font-weight: 600;
+}
+.navList {
+  display: flex;
+  gap: 32px;
+}
+.navLink {
+  text-decoration: none;
+  color: var(--main);
+  padding-top: 24px;
+  padding-bottom: 24px;
+}

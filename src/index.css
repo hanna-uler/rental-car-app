@@ -1,6 +1,24 @@
+:root {
+  /* colors */
+  --main: #101828;
+  --gray: #8d929a;
+  --gray-light: #dadde1;
+  --badges: #f2f4f7;
+  --inputs: #f7f7f7;
+  --white: #fff;
+  --button: #3470ff;
+  --button-hover: #0b44cd;
+  /* fonts */
+  --font-family: 'Manrope', sans-serif;
+  --second-family: 'Inter', sans-serif;
+}
+
 body {
-  font-family: sans-serif;
-  line-height: 1.5;
+  color: var(--main);
+  font-family: var(--font-family);
+  line-height: 125%;
+  font-weight: 500;
+  font-size: 16px;
 }
 
 h1,

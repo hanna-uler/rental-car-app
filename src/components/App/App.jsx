@@ -4,6 +4,7 @@ import Layout from "../Layout/Layout"
 import HomePage from "../../pages/HomePage/HomePage"
 import CatalogPage from "../../pages/CatalogPage/CatalogPage"
 import CarDetailsPage from "../../pages/CarDetailsPage/CarDetailsPage"
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage"
 
 export default function App() {
 
