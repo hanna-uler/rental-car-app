@@ -9,6 +9,12 @@ const filtersSlice = createSlice({
         maxMileage: "",
     },
     reducers: {
+        resetFilters: (state) => {
+            state.brand = "";
+            state.rentalPrice = "";
+            state.minMileage = "";
+            state.maxMileage = "";  
+        },
         updFilters: (state, action) => {
             state.brand = action.payload.brand;
             state.rentalPrice = action.payload.rentalPrice;
@@ -19,4 +25,4 @@ const filtersSlice = createSlice({
 })
 
 export default filtersSlice.reducer;
-export const { updFilters } = filtersSlice.actions;
+export const {resetFilters, updFilters } = filtersSlice.actions;
