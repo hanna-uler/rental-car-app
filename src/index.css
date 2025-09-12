@@ -15,10 +15,16 @@
 
 body {
   color: var(--main);
+  background-color: var(--white);
   font-family: var(--font-family);
   line-height: 125%;
   font-weight: 500;
   font-size: 16px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  /* max-width: 1440px; */
+  box-sizing: border-box;
 }
 
 h1,
@@ -35,6 +41,7 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 img {

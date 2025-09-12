@@ -1,0 +1,17 @@
+.btn {
+  border-radius: 12px;
+  padding: 12px 99px;
+  /* width: 276px;
+  height: 44px; */
+  background: var(--button);
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 125%;
+  border: none;
+}
+.btn:hover,
+.btn:focus {
+  background: var(--button-hover);
+}

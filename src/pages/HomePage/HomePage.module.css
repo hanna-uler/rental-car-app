@@ -1,0 +1,42 @@
+.container {
+  background-image: url('/hero-pic');
+  /* background-image: url('../../../public/hero-pic.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 700px;
+  position: relative;
+  background-position: top;
+}
+.wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.titlesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.title {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--white);
+  white-space: nowrap;
+}
+.subTitle {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33333;
+  text-align: center;
+  color: var(--white);
+  white-space: nowrap;
+}
