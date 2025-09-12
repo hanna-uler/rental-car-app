@@ -1,6 +1,6 @@
 .container {
-  background-image: url('/hero-pic');
-  /* background-image: url('../../../public/hero-pic.jpg'); */
+  /* background-image: url('/hero-pic.jpg'); */
+  background-image: url('../../../public/hero-pic.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 700px;
