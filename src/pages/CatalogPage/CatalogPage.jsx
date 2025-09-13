@@ -3,21 +3,21 @@ import Filters from "../../components/Filters/Filters"
 import CarListing from "../../components/CarListing/CarListing"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { selectCarList } from "../../redux/cars/selectors"
+import { selectCarList, selectPage, selectLimit } from "../../redux/cars/selectors"
 import { selectBrandFilter, selectPriceFilter, selectMinMileageFilter, selectMaxMileageFilter } from "../../redux/filters/selectors"
 import { getCarList } from "../../redux/cars/operations"
 
 export default function CatalogPage() {
     const dispatch = useDispatch();
     const brand = useSelector(selectBrandFilter);
-    const price = useSelector(selectPriceFilter);
     const minMileage = useSelector(selectMinMileageFilter);
     const maxMileage = useSelector(selectMaxMileageFilter);
-    let page = 1;
+    const rentalPrice = useSelector(selectPriceFilter)
+    const page = useSelector(selectPage);
+    const limit = useSelector(selectLimit);
     useEffect(() => {
-        dispatch(getCarList({ brand, price, minMileage, maxMileage, page, limit: 12 }))
-        console.log("Effect Get Cars")
-    }, [dispatch, brand, price, minMileage, maxMileage, page])
+        dispatch(getCarList({ brand, rentalPrice, minMileage, maxMileage, page, limit}))
+    }, [dispatch, brand, rentalPrice, minMileage, maxMileage, page, limit])
 
     const carList = useSelector(selectCarList);
     return (

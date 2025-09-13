@@ -27,6 +27,7 @@ export default function Filters() {
         dispatch(resetFilters())
         console.log("Submitting filters => values: ", values)
         dispatch(updFilters(values))
+        // actions.resetForm()
     }
     return (
         <Formik initialValues={initValues} onSubmit={onFormSubmit}>

@@ -14,6 +14,7 @@ const carsSlice = createSlice({
     initialState: {
         cars: [],
         page: 1,
+        limit: 12,
         totalCars: null,
         totalPages: null,
         isLoading: false,
