@@ -1,8 +1,8 @@
 import css from "./ItemCard.module.css"
-import Button from "../Button/Button";
-
+import LinkButton from "../LinkButton/LinkButton";
 export default function ItemCard({ car }) {
     const {
+        id,
         img,
         year = "N/A",
         brand,
@@ -14,7 +14,6 @@ export default function ItemCard({ car }) {
         address = "N/A"
     } = car;
     const addressParts = address.split(",").map(part => part.trim());
-
     const city = addressParts[addressParts.length - 2];
     const country = addressParts[addressParts.length - 1]; 
     const formattedMileage = mileage.toLocaleString("en-US").replace(",", " ");
@@ -43,7 +42,7 @@ export default function ItemCard({ car }) {
                     </div>
                 </div>
             </div>
-            <Button type="button" text="Read more"/>
+            <LinkButton text={"Read more"} path={`/catalog/${id}`} />
         </div>
     )
 }
