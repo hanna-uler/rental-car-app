@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getBrands} from "./operations"
+import { getBrands } from "./operations"
 
 const handlePending = (state) => {
     state.isError = null;
@@ -8,7 +8,7 @@ const handlePending = (state) => {
 const handleError = (state, action) => {
     state.isError = action.payload;
     state.isLoading = false;
-} 
+}
 const brandsSlice = createSlice({
     name: "brands",
     initialState: {

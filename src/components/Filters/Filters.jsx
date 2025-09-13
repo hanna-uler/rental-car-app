@@ -4,6 +4,7 @@ import { Formik, Form, Field } from "formik"
 import { useSelector, useDispatch } from "react-redux"
 import { selectBrands } from "../../redux/brands/selectors"
 import { getBrands } from "../../redux/brands/operations"
+import { resetFilters, updFilters } from "../../redux/filters/slice"
 import Button from "../Button/Button"
 import clsx from "clsx"
 
@@ -23,7 +24,9 @@ export default function Filters() {
     const brands = useSelector(selectBrands);
 
     const onFormSubmit = (values) => {
+        dispatch(resetFilters())
         console.log("Submitting filters => values: ", values)
+        dispatch(updFilters(values))
     }
     return (
         <Formik initialValues={initValues} onSubmit={onFormSubmit}>
