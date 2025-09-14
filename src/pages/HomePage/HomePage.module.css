@@ -40,3 +40,6 @@
   color: var(--white);
   white-space: nowrap;
 }
+.btnDiv {
+  width: 276px;
+}

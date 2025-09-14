@@ -1,26 +1,19 @@
 .btn {
   border-radius: 12px;
-  padding: 12px 99px;
-  /* width: 276px;
-  height: 44px; */
+  /* padding: 12px 99px; */
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: block;
   background: var(--button);
   font-weight: 600;
   color: var(--white);
   line-height: 125%;
   text-decoration: none;
-  /* text-align: center; */
-  /* white-space: nowrap; */
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
 }
 .btn:hover,
 .btn:focus {
   background: var(--button-hover);
 }
-
-/* .flexible {
-  width: 100%;
-  height: 44px;
-}
-.heroBtn {
-  width: 276px;
-  height: 44px;
-} */
