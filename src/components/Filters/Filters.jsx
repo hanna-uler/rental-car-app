@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { selectBrands } from "../../redux/brands/selectors"
 import { getBrands } from "../../redux/brands/operations"
 import { resetFilters, updFilters } from "../../redux/filters/slice"
+import {resetPages} from "../../redux/cars/slice"
 import Button from "../Button/Button"
 import clsx from "clsx"
 
@@ -24,6 +25,7 @@ export default function Filters() {
 
     const onFormSubmit = (values) => {
         dispatch(resetFilters())
+        dispatch(resetPages())
         dispatch(updFilters(values))
         // actions.resetForm()
     }

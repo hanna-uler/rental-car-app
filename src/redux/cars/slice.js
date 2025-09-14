@@ -25,6 +25,10 @@ const carsSlice = createSlice({
         updPageNumber: (state) => {
             state.page = Number(state.page) + 1;
         },
+        resetPages: (state) => {
+            state.page = 1;
+            state.totalPages = 1;
+        }
     },
     extraReducers: builder =>
         builder
@@ -47,4 +51,4 @@ const carsSlice = createSlice({
 })
 
 export default carsSlice.reducer;
-export const {updPageNumber } = carsSlice.actions;
+export const {updPageNumber, resetPages } = carsSlice.actions;
