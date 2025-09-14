@@ -17,15 +17,22 @@ const carsSlice = createSlice({
         page: 1,
         limit: 12,
         totalCars: null,
-        totalPages: null,
+        totalPages: 1,
         isLoading: false,
         isError: null,
+    },
+    reducers: {
+        updPageNumber: (state) => {
+            state.page +=1;
+        },
     },
     extraReducers: builder =>
         builder
         .addCase(getCarList.pending, handlePending)
         .addCase(getCarList.fulfilled, (state, action) => {
-            state.cars = action.payload;
+            state.cars = action.payload.cars;
+            state.page = action.payload.page;
+            state.totalPages = action.payload.totalPages;
             state.isError = null;
             state.isLoading = false;
         })
@@ -40,3 +47,4 @@ const carsSlice = createSlice({
 })
 
 export default carsSlice.reducer;
+export const {updPageNumber } = carsSlice.actions;

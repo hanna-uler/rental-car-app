@@ -14,7 +14,7 @@ export const getCarList = createAsyncThunk("cars/getCarList", async (params, thu
     try {
         const res = await axios.get(`/cars?${query}`);
         console.log("getCarListOperat => res: ", res);
-        return res.data.cars;
+        return res.data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message || "Something went wrong")
     }
