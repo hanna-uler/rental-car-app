@@ -5,6 +5,7 @@ import HomePage from "../../pages/HomePage/HomePage"
 import CatalogPage from "../../pages/CatalogPage/CatalogPage"
 import CarDetailsPage from "../../pages/CarDetailsPage/CarDetailsPage"
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage"
+import { Toaster } from "react-hot-toast"
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/catalog/:id" element={<CarDetailsPage />} />
         <Route path="*" element={ <NotFoundPage/> } />
       </Routes>
+      <Toaster position="top-right" toastOptions={{ duration: 5000, }} />
     </Layout>
   )
 }

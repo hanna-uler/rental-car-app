@@ -12,7 +12,6 @@ export default function Filters() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getBrands());
-        console.log("in Filt effect")
     }, [dispatch])
     const initValues = {
         brand: "",
@@ -25,7 +24,6 @@ export default function Filters() {
 
     const onFormSubmit = (values) => {
         dispatch(resetFilters())
-        console.log("Submitting filters => values: ", values)
         dispatch(updFilters(values))
         // actions.resetForm()
     }

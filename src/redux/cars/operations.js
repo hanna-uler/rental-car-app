@@ -13,7 +13,6 @@ export const getCarList = createAsyncThunk("cars/getCarList", async (params, thu
     });
     try {
         const res = await axios.get(`/cars?${query}`);
-        console.log("getCarListOperat => res: ", res);
         return res.data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.message || "Something went wrong")
@@ -23,10 +22,8 @@ export const getCarList = createAsyncThunk("cars/getCarList", async (params, thu
 export const getCarDetails = createAsyncThunk("cars/getCar", async (id, thunkAPI) => {
     try {
         const res = await axios.get(`cars/${id}`);
-        console.log("getCarOperat => res: ", res);
         return res.data;
     } catch (error) {
-        console.log("error: ", error.message)
         return thunkAPI.rejectWithValue(error.message || "Something went wrong")
     }
 })

@@ -1,3 +1,4 @@
+import toast from "react-hot-toast"
 import Button from "../Button/Button"
 import css from "./RentalForm.module.css"
 import { Formik, Form, Field } from "formik"
@@ -10,8 +11,9 @@ export default function RentalForm({id}) {
         comment: ""
     }
     const handleFormSubmit = (values) => {
-        const rentData = {...values, carId: id}
-        console.log("The form has been submitted. Planning to use react-hot-toast for the notifying", rentData)
+        const rentData = { ...values, carId: id };
+        toast.success("Thank you! We've received your request.");
+        console.log("The form has been submitted. Here is the submitted data: ", rentData)
     }
     return (
         <div className={css.container}>
@@ -27,8 +29,7 @@ export default function RentalForm({id}) {
                         <Button text="Send" type="submit"/>
                     </div> 
             </Form>
-        </Formik></div>
-        
+            </Formik>
+        </div>
     )
-    
 }

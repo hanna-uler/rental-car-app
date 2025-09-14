@@ -20,12 +20,10 @@ export default function CatalogPage() {
     const totalPages = useSelector(selectTotalPages);
     useEffect(() => {
         dispatch(getCarList({ brand, rentalPrice, minMileage, maxMileage, page, limit}))
-    console.log("loading cars effect => page: ", page)
     }, [dispatch, brand, rentalPrice, minMileage, maxMileage, page, limit])
 
     const handelLoadMore = () => {
         dispatch(updPageNumber())
-        console.log("current page: ",page)
     }
     const carList = useSelector(selectCarList);
     return (
