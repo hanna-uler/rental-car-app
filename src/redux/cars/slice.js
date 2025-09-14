@@ -23,7 +23,7 @@ const carsSlice = createSlice({
     },
     reducers: {
         updPageNumber: (state) => {
-            state.page +=1;
+            state.page = Number(state.page) + 1;
         },
     },
     extraReducers: builder =>
