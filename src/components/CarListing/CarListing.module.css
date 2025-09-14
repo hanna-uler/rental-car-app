@@ -5,6 +5,7 @@
   row-gap: 32px;
   column-gap: 48px;
   margin-top: 56px;
+  margin-bottom: 80px;
 }
 .card {
   width: calc((100% - 32px * 3) / 4);
