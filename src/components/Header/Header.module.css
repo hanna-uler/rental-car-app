@@ -7,12 +7,8 @@
   background-color: var(--badges);
 }
 .logo {
-  color: black;
-  font-weight: 600;
-}
-.logoSpan {
-  color: blue;
-  font-weight: 600;
+  padding: 0;
+  height: 16px;
 }
 .navList {
   display: flex;

@@ -1,5 +1,6 @@
 import css from "./ItemCard.module.css"
 import LinkButton from "../LinkButton/LinkButton";
+import svgSprite from "../../images/icons.svg"
 export default function ItemCard({ car }) {
     const {
         id,
@@ -23,6 +24,13 @@ export default function ItemCard({ car }) {
             <div>
                 <div className={css.imgWrapper}>
                     <img className={css.img} src={img} alt={`${brand} ${model} ${year}`} />
+                    <button className={css.likeBtn} type="button">
+                        <svg className={css.icon}>
+                            {/* {isFavorite && <use href={`${svgSprite}#icon-like-active`} width={16} height={16}>
+                            </use>} */}
+                            <use href={`${svgSprite}#icon-like-empty`} width={16} height={16}></use>
+                        </svg>
+                    </button>
                 </div>
                 <div className={css.descrWrapper}>
                     <div className={css.mainInfo}>
