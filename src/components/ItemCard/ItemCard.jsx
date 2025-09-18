@@ -1,7 +1,11 @@
 import css from "./ItemCard.module.css"
 import LinkButton from "../LinkButton/LinkButton";
 import svgSprite from "../../images/icons.svg"
-export default function ItemCard({ car }) {
+import { useDispatch } from "react-redux";
+import { addToFavs, deleteFromFavs } from "../../redux/favorites/slice";
+
+
+export default function ItemCard({ car, isFavorite }) {
     const {
         id,
         img,
@@ -14,6 +18,16 @@ export default function ItemCard({ car }) {
         rentalCompany = "N/A",
         address = "N/A"
     } = car;
+
+    const dispatch = useDispatch();
+    const handleFavClick = () => {
+        if (isFavorite) {
+            dispatch(deleteFromFavs(id))
+        } else {
+            dispatch(addToFavs(id))
+        }
+    }
+    
     const addressParts = address.split(",").map(part => part.trim());
     const city = addressParts[addressParts.length - 2];
     const country = addressParts[addressParts.length - 1]; 
@@ -24,11 +38,12 @@ export default function ItemCard({ car }) {
             <div>
                 <div className={css.imgWrapper}>
                     <img className={css.img} src={img} alt={`${brand} ${model} ${year}`} />
-                    <button className={css.likeBtn} type="button">
+                    <button className={css.likeBtn} type="button" onClick={handleFavClick}>
                         <svg className={css.icon}>
-                            {/* {isFavorite && <use href={`${svgSprite}#icon-like-active`} width={16} height={16}>
-                            </use>} */}
-                            <use href={`${svgSprite}#icon-like-empty`} width={16} height={16}></use>
+                            {isFavorite
+                                ? <use href={`${svgSprite}#icon-like-active`} width={16} height={16}>
+                                </use>
+                                : <use href={`${svgSprite}#icon-like-empty`} width={16} height={16}></use>}
                         </svg>
                     </button>
                 </div>
