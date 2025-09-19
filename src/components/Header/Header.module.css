@@ -20,3 +20,6 @@
   padding-top: 24px;
   padding-bottom: 24px;
 }
+.activeLink {
+  color: var(--button-hover);
+}
