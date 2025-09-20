@@ -1,7 +1,7 @@
-import css from "./Button.module.css"
+import clsx from "clsx"
 
-export default function Button({ type = "button", onClick, text }) {
+export default function Button({ type = "button", onClick, text, style }) {
 
     return(
-    <button className={css.btn} type={type} onClick={onClick} >{ text }</button>)
+    <button className={clsx("btn", style)} type={type} onClick={onClick} >{ text }</button>)
 }

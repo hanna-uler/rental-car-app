@@ -1,4 +1,5 @@
 import css from "./CatalogPage.module.css"
+import clsx from "clsx"
 import Filters from "../../components/Filters/Filters"
 import CarListing from "../../components/CarListing/CarListing"
 import { useEffect } from "react"
@@ -27,10 +28,10 @@ export default function CatalogPage() {
     }
     const carList = useSelector(selectCarList);
     return (
-        <div className={css.container}>
+        <div className={clsx("container", css.container)}>
             <Filters />
             {carList.length > 0 && <CarListing cars={carList} />}
-            {page < totalPages && <Button text="Load more" onClick={handelLoadMore} />}
+            {page < totalPages && <Button text="Load more" onClick={handelLoadMore} style="btnTransp"/>}
         </div>
     )
 }

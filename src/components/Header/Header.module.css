@@ -1,14 +1,19 @@
+.contExt {
+  width: 100%;
+  background-color: var(--badges);
+}
 .container {
-  padding: 0 120px;
   border-bottom: 1px solid var(--badges);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--badges);
+  /* background-color: var(--badges); */
 }
 .logo {
   padding: 0;
   height: 16px;
+  text-align: left;
+  width: 104px;
 }
 .navList {
   display: flex;

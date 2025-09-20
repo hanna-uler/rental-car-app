@@ -50,7 +50,42 @@ img {
   display: block;
   max-width: 100%;
 }
+.container {
+  max-width: 1440px;
+  padding: 0 120px;
+  margin: 0 auto;
+}
 
 button {
   cursor: pointer;
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 12px 51px;
+  background: var(--button);
+  font-family: inherit;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 16px;
+  line-height: 125%;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+.btn:hover,
+.btn:focus {
+  background: var(--button-hover);
+}
+.btnTransp {
+  border: 1px solid #3470ff;
+  color: var(--main);
+  background: transparent;
+  white-space: nowrap;
+  text-align: center;
+}
+.btnTransp:hover,
+.btnTransp:focus {
+  border-color: var(--button-hover);
+  background: transparent;
 }
