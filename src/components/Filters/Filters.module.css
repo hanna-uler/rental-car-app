@@ -2,14 +2,15 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 16px;
-  width: fit-content;
   align-items: flex-end;
   margin: 0 auto;
+  max-width: 924px;
 }
 .fieldWrapper {
   /* position: relative; */
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 .label {
   font-weight: 400;
@@ -52,10 +53,12 @@
 .minMilInput {
   border-right: 1px solid var(--gray-light);
   border-radius: 12px 0 0 12px;
-  width: 160px;
+  /* flex: 1; */
+  max-width: 160px;
 }
 
 .maxMilInput {
   border-radius: 0 12px 12px 0;
-  width: 160px;
+  /* flex: 1; */
+  max-width: 160px;
 }

@@ -1,5 +1,5 @@
 import css from "./Filters.module.css"
-import Select from "react-select"
+import Select, {components} from "react-select"
 import { useEffect } from "react"
 import { Formik, Form, Field } from "formik"
 import { useSelector, useDispatch } from "react-redux"
@@ -38,13 +38,6 @@ export default function Filters() {
         value: brand,
         label: brand
     }))
-        
-    const onFormSubmit = (values) => {
-        dispatch(resetFilters())
-        dispatch(resetPages())
-        dispatch(updFilters(values))
-        // actions.resetForm()
-    }
 
     const dropDownStyles = {
         control: (provided) => ({
@@ -115,7 +108,20 @@ export default function Filters() {
             ...provided,
             color: "var(--gray)"
         }),
-};
+    };
+
+    const customSelectPriceValue = (props) => (
+        <components.SingleValue {...props}>
+            {`To $${props.data.label}`}
+        </components.SingleValue>
+    )
+    const onFormSubmit = (values) => {
+        dispatch(resetFilters())
+        dispatch(resetPages())
+        dispatch(updFilters(values))
+        // actions.resetForm()
+    }
+
     return (
         <Formik initialValues={initValues} onSubmit={onFormSubmit}>
             {({ setFieldValue, values }) => (
@@ -163,6 +169,7 @@ export default function Filters() {
                             placeholder="Choose price"
                             isClearable={true}
                             isSearchable={true}
+                            components={{SingleValue: customSelectPriceValue}}
                         />
                         {/* <svg className={css.icon}>
                             <use href={`${svgSprite}#icon-select-error-default`}>
