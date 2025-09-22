@@ -7,6 +7,7 @@
   margin: 0 auto;
 }
 .fieldWrapper {
+  /* position: relative; */
   display: flex;
   flex-direction: column;
 }
@@ -35,6 +36,16 @@
   line-height: 1.25;
   color: var(--main);
 }
+/* .icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 32px;
+  right: 16px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+} */
 .milageWrapper {
   display: flex;
 }
