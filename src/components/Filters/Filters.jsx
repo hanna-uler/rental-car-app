@@ -7,6 +7,7 @@ import { selectBrands } from "../../redux/brands/selectors"
 import { getBrands } from "../../redux/brands/operations"
 import { resetFilters, updFilters } from "../../redux/filters/slice"
 import { resetPages } from "../../redux/cars/slice"
+import MileageInput from "../MileageInput/MileageInput"
 // import svgSprite from "../../images/icons.svg"
 import Button from "../Button/Button"
 import clsx from "clsx"
@@ -179,8 +180,8 @@ export default function Filters() {
                     <div className={css.fieldWrapper}>
                         <label className={css.label} htmlFor="milageField">Car mileage / km</label>
                         <div className={css.milageWrapper}>
-                            <Field className={clsx(css.input, css.minMilInput)} name="minMileage" id="milageField" placeholder="From"/>
-                            <Field className={clsx(css.input, css.maxMilInput)} name="maxMileage" id="milageField" placeholder="To"/>
+                            <Field className={clsx(css.input, css.minMilInput)} name="minMileage" id="milageField" placeholder="From" prefix="From " component={MileageInput} />
+                            <Field className={clsx(css.input, css.maxMilInput)} name="maxMileage" id="milageField" placeholder="To" prefix="To " component={MileageInput}/>
                         </div>
                     
                     </div>
