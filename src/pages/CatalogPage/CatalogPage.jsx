@@ -33,9 +33,7 @@ export default function CatalogPage() {
     return (
         <div className={clsx("container", css.container)}>
             <Filters />
-            {carList.length > 0
-                ? <CarListing cars={carList} />
-                : <p className={css.noMatchMessage}>Sorry, We couldn't find any results matching your query. Please try broadening your search.</p>}
+            {carList.length > 0 && <CarListing cars={carList} />}
             {page < totalPages && <Button text="Load more" onClick={handelLoadMore} style="btnTransp"/>}
         </div>
     )
