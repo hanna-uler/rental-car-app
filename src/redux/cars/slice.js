@@ -28,13 +28,16 @@ const carsSlice = createSlice({
         resetPages: (state) => {
             state.page = 1;
             state.totalPages = 1;
+        },
+        clearCarList: (state) => {
+            state.cars = [];
         }
     },
     extraReducers: builder =>
         builder
         .addCase(getCarList.pending, handlePending)
         .addCase(getCarList.fulfilled, (state, action) => {
-            state.cars = action.payload.cars;
+            state.cars.push(...action.payload.cars);
             state.page = action.payload.page;
             state.totalPages = action.payload.totalPages;
             state.isError = null;
@@ -51,4 +54,4 @@ const carsSlice = createSlice({
 })
 
 export default carsSlice.reducer;
-export const {updPageNumber, resetPages } = carsSlice.actions;
+export const {updPageNumber, resetPages, clearCarList } = carsSlice.actions;

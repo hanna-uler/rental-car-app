@@ -8,7 +8,7 @@ import { selectCarList, selectPage, selectLimit, selectTotalPages } from "../../
 import { selectBrandFilter, selectPriceFilter, selectMinMileageFilter, selectMaxMileageFilter } from "../../redux/filters/selectors"
 import { getCarList } from "../../redux/cars/operations"
 import Button from "../../components/Button/Button"
-import { updPageNumber } from "../../redux/cars/slice"
+import { updPageNumber, clearCarList } from "../../redux/cars/slice"
 
 export default function CatalogPage() {
     const dispatch = useDispatch();
@@ -19,6 +19,9 @@ export default function CatalogPage() {
     const page = useSelector(selectPage);
     const limit = useSelector(selectLimit);
     const totalPages = useSelector(selectTotalPages);
+    useEffect(() => {
+        dispatch(clearCarList())
+    }, [dispatch])
     useEffect(() => {
         dispatch(getCarList({ brand, rentalPrice, minMileage, maxMileage, page, limit}))
     }, [dispatch, brand, rentalPrice, minMileage, maxMileage, page, limit])
