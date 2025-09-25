@@ -1,5 +1,7 @@
 import css from "./CarInfo.module.css"
-// import svgSprite from "../../images/icons.svg"
+import svgSprite from "../../images/icons.svg"
+import SpecList from "../SpecList/SpecList";
+import CarSpec from "../CarSpec/CarSpec";
 
 export default function CarInfo({ car }) {
     const {
@@ -7,10 +9,8 @@ export default function CarInfo({ car }) {
         year = "N/A",
         brand,
         model = "N/A",
-        // type = "N/A",
         rentalPrice,
         mileage,
-        // rentalCompany = "N/A",
         address = "N/A",
         description
     } = car;
@@ -19,6 +19,7 @@ export default function CarInfo({ car }) {
     const country = addressParts[addressParts.length - 1]; 
     console.log("mileage: ", mileage);
     const formattedMileage = mileage.toLocaleString("en-US").replace(",", " ");
+    const accesAndFuncs = [...car.accessories, ...car.functionalities]
     
     return (
         <div className={css.container}>
@@ -28,14 +29,18 @@ export default function CarInfo({ car }) {
                     <p>{`Id: ${id}`}</p>
                 </div>
                 <div className={css.addrLine}>
-                    {/* <svg className={css.icon}><use href={`${svgSprite}#icon-location`}></use></svg> */}
+                    <svg className={css.icon}><use href={`${svgSprite}#icon-location`}></use></svg>
                     <p className={css.location}>{`${city}, ${country}`}</p>
                     <p>{ `Mileage: ${formattedMileage} km`}</p>
                 </div>
                 <p>{`$${rentalPrice}`}</p>
                 <p>{ description}</p>
             </div>
-            <div className={css.detailsBlock}></div>
+            <div className={css.detailsBlock}>
+                <SpecList title={"Rental Conditions:"} items={car.rentalConditions} />
+                <CarSpec car={car}/>
+                <SpecList title={"Accessories and functionalaties:"} items={accesAndFuncs}/>
+            </div>
         </div>
     )
 }

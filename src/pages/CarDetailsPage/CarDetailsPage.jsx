@@ -16,15 +16,20 @@ export default function CarDetailsPage() {
     }, [dispatch, id])
     const car = useSelector(selectCarDetails);
     console.log("car: ", car)
-    console.log("car.img: ", car.img)
+    // console.log("car.img: ", car.img)
     return (
         <div className={clsx("container", css.container)}>
             {/* <h2 style={{ textAlign: "center", marginTop: "48px" }}>The details will be here soon</h2>
             <h3 style={{ textAlign: "center",marginTop: "36px" }}>Car #{ id}</h3>
             <p style={{ textAlign: "center", marginTop: "36px" }}>If any questions - call us 012-345-67-89</p> */}
-            <div><img src={car.img} alt={`${car.brand} ${car.model}`} /></div>
-            <CarInfo car={car} />
-            <RentalForm id={id}/>
+            {car
+                ? <div className={css.leftSide}>
+                    <img src={car.img} alt={`${car.brand} ${car.model}`} />
+                    <RentalForm id={id}/>
+                </div>
+                : <strong>{"Opps, something went wrong. Please, try to refresh the page."}</strong>}
+            {/* <div className={css.rightSide}></div> */}
+            {car && <CarInfo car={car} />}
         </div>
     )
 }
