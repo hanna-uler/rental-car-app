@@ -13,7 +13,7 @@ const carsSlice = createSlice({
     name: "cars",
     initialState: {
         cars: [],
-        carDetails: null,
+        carDetails: {},
         page: 1,
         limit: 12,
         totalCars: null,
