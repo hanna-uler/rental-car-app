@@ -1,16 +1,40 @@
 .container {
-  width: 450px;
-  padding: 40px 24px;
+  /* width: 450px; */
+  padding: 32px;
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  width: 100%;
+}
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+.descr {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--gray);
+  margin-bottom: 24px;
 }
 .form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
 }
 .input {
   width: 100%;
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: var(--inputs);
+  outline: none;
+  border: none;
 }
-.btnWrapper {
-  width: 200px;
+
+.textarea {
+  resize: none;
+  margin-bottom: 8px;
 }

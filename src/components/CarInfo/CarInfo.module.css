@@ -1,4 +1,23 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+}
+.mainInfo {
+  flex-grow: 0;
+}
+.titleLine {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.id {
+  color: var(--gray);
+}
+.addrLine {
+  margin-bottom: 16px;
 }
 .icon {
   width: 12px;
@@ -8,4 +27,21 @@
 }
 .location {
   display: inline-block;
+  margin-right: 16px;
+}
+.mileage {
+  display: inline-block;
+}
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--button);
+  margin-bottom: 32px;
+}
+.detailsBlock {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
 }

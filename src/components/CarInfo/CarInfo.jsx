@@ -14,6 +14,7 @@ export default function CarInfo({ car }) {
         address = "N/A",
         description
     } = car;
+    const displayedId = id.slice(-4);
     const addressParts = address.split(",").map(part => part.trim());
     const city = addressParts[addressParts.length - 2];
     const country = addressParts[addressParts.length - 1]; 
@@ -26,14 +27,14 @@ export default function CarInfo({ car }) {
             <div className={css.mainInfo}>
                 <div className={css.titleLine}>
                     <h2>{`${brand} ${model}, ${year}`}</h2>
-                    <p>{`Id: ${id}`}</p>
+                    <p className={css.id}>{`Id: ${displayedId}`}</p>
                 </div>
                 <div className={css.addrLine}>
                     <svg className={css.icon}><use href={`${svgSprite}#icon-location`}></use></svg>
                     <p className={css.location}>{`${city}, ${country}`}</p>
-                    <p>{ `Mileage: ${formattedMileage} km`}</p>
+                    <p className={css.mileage}>{ `Mileage: ${formattedMileage} km`}</p>
                 </div>
-                <p>{`$${rentalPrice}`}</p>
+                <p className={css.price}>{`$${rentalPrice}`}</p>
                 <p>{ description}</p>
             </div>
             <div className={css.detailsBlock}>

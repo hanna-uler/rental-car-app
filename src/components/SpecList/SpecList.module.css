@@ -1,3 +1,13 @@
+.title {
+  margin-bottom: 20px;
+}
+.list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
 .icon {
   width: 16px;
   height: 16px;

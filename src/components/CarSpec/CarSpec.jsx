@@ -5,8 +5,8 @@ export default function CarSpec({ car }) {
     const { fuelConsumption, engineSize, type, year } = car;
     return (
         <div className={css.container}>
-            <h3>Car Specifications:</h3>
-            <ul>
+            <h3 className={css.title}>Car Specifications:</h3>
+            <ul className={css.list}>
                 <li>
                     <svg className={css.icon}><use href={`${svgSprite}#icon-calendar`}></use></svg>
                     <p className={css.descr}>{`Year: ${year}`}</p>

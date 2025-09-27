@@ -24,7 +24,7 @@ export default function CarDetailsPage() {
             <p style={{ textAlign: "center", marginTop: "36px" }}>If any questions - call us 012-345-67-89</p> */}
             {car
                 ? <div className={css.leftSide}>
-                    <img src={car.img} alt={`${car.brand} ${car.model}`} />
+                    <img className={css.pic} src={car.img} alt={`${car.brand} ${car.model}`} />
                     <RentalForm id={id}/>
                 </div>
                 : <strong>{"Opps, something went wrong. Please, try to refresh the page."}</strong>}
