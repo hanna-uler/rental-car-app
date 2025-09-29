@@ -15,7 +15,6 @@ const carsSlice = createSlice({
         cars: [],
         carDetails: null,
         page: 1,
-        limit: 12,
         totalCars: null,
         totalPages: 1,
         isLoading: false,
@@ -37,11 +36,16 @@ const carsSlice = createSlice({
         builder
         .addCase(getCarList.pending, handlePending)
         .addCase(getCarList.fulfilled, (state, action) => {
-            state.cars.push(...action.payload.cars);
-            state.page = action.payload.page;
             state.totalPages = action.payload.totalPages;
             state.isError = null;
             state.isLoading = false;
+            // state.cars = action.payload.cars;
+            console.log(action.payload.page);
+            if (action.payload.page === "1") {
+                state.cars = action.payload.cars;
+            } else {
+                state.cars.push(...action.payload.cars); 
+            }
         })
             .addCase(getCarList.rejected, handleError)
             .addCase(getCarDetails.pending, handlePending)

@@ -22,7 +22,7 @@ const showSmthWentWrong = (message) => {
     });
 }
 export const getCarList = createAsyncThunk("cars/getCarList", async (params, thunkAPI) => {
-    const { brand, rentalPrice, minMileage, maxMileage, page, limit } = params;
+    const { brand, rentalPrice, minMileage, maxMileage, page=1, limit=12 } = params;
     const query = new URLSearchParams({
         page,
         limit,
