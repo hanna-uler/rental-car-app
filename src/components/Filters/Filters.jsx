@@ -1,5 +1,5 @@
 import css from "./Filters.module.css"
-import Select, {components} from "react-select"
+import Select, { components } from "react-select"
 import { useEffect } from "react"
 import { Formik, Form, Field } from "formik"
 import { useSelector, useDispatch } from "react-redux"
@@ -131,7 +131,7 @@ export default function Filters() {
                     <div className={css.fieldWrapper}>
                         <label className={css.label} htmlFor="carBrandField">Car brand</label>
                         <Select
-                            id="carBrandField" 
+                            inputId="carBrandField" 
                             name="brand" 
                             options={formatBrands} 
                             value={formatBrands.find((opt) => opt.value === values.brand)}
@@ -148,15 +148,11 @@ export default function Filters() {
                             isLoading={formatBrands.length === 0}
                             styles={dropDownStyles}
                         />
-                        {/* <svg className={css.icon}>
-                            <use href={`${svgSprite}#icon-select-error-default`}>
-                            </use>
-                        </svg> */}
                     </div>
                     <div className={css.fieldWrapper}>
                         <label className={css.label} htmlFor="rentalPriceField">Price/ 1 hour</label>
                         <Select
-                            id="rentalPriceField"
+                            inputId="rentalPriceField"
                             name="rentalPrice"
                             options={priceOptions}
                             value={priceOptions.find((opt) => opt.value === values.rentalPrice)}
@@ -179,10 +175,10 @@ export default function Filters() {
                         </svg> */}
                     </div>
                     <div className={css.fieldWrapper}>
-                        <label className={css.label} htmlFor="milageField">Car mileage / km</label>
+                        <p className={css.label}>Car mileage / km</p>
                         <div className={css.milageWrapper}>
-                            <Field className={clsx(css.input, css.minMilInput)} name="minMileage" id="milageField" placeholder="From" prefix="From " component={MileageInput} />
-                            <Field className={clsx(css.input, css.maxMilInput)} name="maxMileage" id="milageField" placeholder="To" prefix="To " component={MileageInput}/>
+                            <Field className={clsx(css.input, css.minMilInput)} name="minMileage" placeholder="From" prefix="From " component={MileageInput} />
+                            <Field className={clsx(css.input, css.maxMilInput)} name="maxMileage" placeholder="To" prefix="To " component={MileageInput}/>
                         </div>
                     
                     </div>
