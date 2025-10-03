@@ -1,10 +1,8 @@
-.container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  gap: 28px;
+.imgWrapper {
   position: relative;
+}
+.img {
+  border-radius: 14px;
 }
 .likeBtn {
   position: absolute;
@@ -15,7 +13,7 @@
   padding: 0;
   padding-inline: 0;
 }
-.icon {
+.likeIcon {
   width: 16px;
   height: 16px;
 }
@@ -25,4 +23,32 @@
   justify-content: flex-start;
   flex-direction: column;
   gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+.mainInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.modelAccent {
+  color: var(--button);
+}
+.genDetailsWrapper {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+.genDetailsItem {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: var(--gray);
+}
+.dividerIcon {
+  height: 16px;
+  width: 2px;
+  /* stroke: var(--gray-light); */
+  /* margin-left: 6px;
+  margin-right: 6px; */
 }

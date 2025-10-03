@@ -40,7 +40,6 @@ const carsSlice = createSlice({
             state.isError = null;
             state.isLoading = false;
             // state.cars = action.payload.cars;
-            console.log(action.payload.page);
             if (action.payload.page === "1") {
                 state.cars = action.payload.cars;
             } else {

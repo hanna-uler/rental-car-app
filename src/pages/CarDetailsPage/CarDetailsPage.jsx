@@ -15,13 +15,8 @@ export default function CarDetailsPage() {
         dispatch(getCarDetails(id))
     }, [dispatch, id])
     const car = useSelector(selectCarDetails);
-    console.log("car: ", car)
-    // console.log("car.img: ", car.img)
     return (
         <div className={clsx("container", css.container)}>
-            {/* <h2 style={{ textAlign: "center", marginTop: "48px" }}>The details will be here soon</h2>
-            <h3 style={{ textAlign: "center",marginTop: "36px" }}>Car #{ id}</h3>
-            <p style={{ textAlign: "center", marginTop: "36px" }}>If any questions - call us 012-345-67-89</p> */}
             {car
                 ? <div className={css.leftSide}>
                     <img className={css.pic} src={car.img} alt={`${car.brand} ${car.model}`} />

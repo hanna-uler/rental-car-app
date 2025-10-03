@@ -4,7 +4,6 @@ import svgSprite from "../../images/icons.svg"
 import { useDispatch } from "react-redux";
 import { addToFavs, deleteFromFavs } from "../../redux/favorites/slice";
 
-
 export default function ItemCard({ car, isFavorite }) {
     const {
         id,
@@ -34,12 +33,11 @@ export default function ItemCard({ car, isFavorite }) {
     const formattedMileage = mileage.toLocaleString("en-US").replace(",", " ");
 
     return (
-        <div className={css.container}>
-            <div>
+        <>
                 <div className={css.imgWrapper}>
                     <img className={css.img} src={img} alt={`${brand} ${model} ${year}`} />
                     <button className={css.likeBtn} type="button" onClick={handleFavClick}>
-                        <svg className={css.icon}>
+                        <svg className={css.likeIcon}>
                             {isFavorite
                                 ? <use href={`${svgSprite}#icon-like-active`} width={16} height={16}>
                                 </use>
@@ -50,22 +48,25 @@ export default function ItemCard({ car, isFavorite }) {
                 <div className={css.descrWrapper}>
                     <div className={css.mainInfo}>
                         <p className={css.modelInfo}>{brand} <span className={css.modelAccent}>{model}</span>, {year}</p>
-                        <p>${ rentalPrice}</p>
+                        <p className={css.price}>${ rentalPrice}</p>
                     </div>
                     <div className={css.adInfo}>
-                        <div className={css}>
-                            <p>{ city}</p>
-                            <p>{ country}</p>
-                            <p>{ rentalCompany}</p>
+                    <div className={css.genDetailsWrapper}>
+                            <p className={css.genDetailsItem}>{city}</p>
+                            <svg className={css.dividerIcon}><use href={`${svgSprite}#icon-divider`}></use></svg>
+                            <p className={css.genDetailsItem}>{country}</p>
+                            <svg className={css.dividerIcon}><use href={`${svgSprite}#icon-divider`}></use></svg>
+                            <p className={css.genDetailsItem}>{rentalCompany}</p>
+                            <svg className={css.dividerIcon}><use href={`${svgSprite}#icon-divider`}></use></svg>
                         </div>
-                        <div className={css}>
-                            <p>{ type}</p>
-                            <p>{ formattedMileage} km</p>
+                        <div className={css.genDetailsWrapper}>
+                            <p className={css.genDetailsItem}>{type}</p>
+                            <svg className={css.dividerIcon}><use href={`${svgSprite}#icon-divider`}></use></svg>
+                            <p className={css.genDetailsItem}>{formattedMileage} km</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <LinkButton text={"Read more"} path={`/catalog/${id}`} />
-        </div>
+                <LinkButton text={"Read more"} path={`/catalog/${id}`} />
+        </>
     )
 }

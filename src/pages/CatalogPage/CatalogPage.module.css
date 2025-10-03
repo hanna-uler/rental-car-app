@@ -1,10 +1,7 @@
 .container {
   padding-top: 84px;
   padding-bottom: 124px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  width: 100%;
 }
 .noMatchMessage {
   text-align: center;
